@@ -4,6 +4,7 @@ package com.infnet.controller;
 import com.infnet.model.*;
 import com.infnet.service.*;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.*;
 
@@ -11,7 +12,6 @@ import java.util.*;
 
 
 @RestController
-@EnableWebMvc
 public class ContentController {
 
     @Autowired
@@ -29,7 +29,7 @@ public class ContentController {
         return materialService.list();
     }
 
-    @RequestMapping(path = "/portal", method = RequestMethod.POST)
+    @RequestMapping(path = "/portal", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Map<String, String> insertMaterial(@RequestBody Material material) {
         Material materialSaved = materialService.save(material);
