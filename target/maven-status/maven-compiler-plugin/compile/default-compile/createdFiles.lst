@@ -1,0 +1,6 @@
+com\infnet\controller\ContentController.class
+com\infnet\repository\MaterialRepository.class
+com\infnet\service\MaterialService.class
+com\infnet\StreamLambdaHandler.class
+com\infnet\Application.class
+com\infnet\model\Material.class
